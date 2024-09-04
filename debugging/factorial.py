@@ -5,19 +5,19 @@ def factorial(n):
     result = 1
     while n > 1:
         result *= n
-        n -= 1  # Decrement n to avoid infinite loop
+        n -= 1
     return result
 
 if len(sys.argv) != 2:
-    print("Usage: python script.py <number>")
+    print("Usage: python3 script_name.py <number>")
     sys.exit(1)
 
 try:
     number = int(sys.argv[1])
     if number < 0:
-        raise ValueError("Negative numbers are not allowed.")
+        raise ValueError("Factorial is not defined for negative numbers.")
 except ValueError as e:
-    print(f"Invalid input: {e}")
+    print(f"Error: {e}")
     sys.exit(1)
 
 f = factorial(number)
